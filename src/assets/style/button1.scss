@@ -1,0 +1,28 @@
+.button-1 {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.btn-1-black {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.button-1:hover {
+  background-color: $blue !important;
+}
+
+.btn-1-float-right {
+  float: right;
+}

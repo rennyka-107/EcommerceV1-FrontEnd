@@ -1,0 +1,157 @@
+@mixin span-style {
+  display: inline-block;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-align: center;
+}
+
+.home-container {
+  .slide-image {
+    width: 100%;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 700px;
+    }
+
+    p {
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 10%;
+      color: $black;
+      font-size: 30px;
+    }
+
+    p:nth-child(2) {
+      font-size: 40px;
+      font-weight: bold;
+      top: 0;
+    }
+  }
+
+  .middle-content {
+    @include style-p;
+
+    p:nth-child(3) {
+      text-align: justify;
+    }
+
+    .list-items {
+      display: flex;
+      padding: 32px 0;
+      justify-content: space-between;
+
+      .item {
+        width: 30%;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 780px) {
+        flex-direction: column;
+        align-items: center;
+        .item {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  .tour-list-container {
+    background-color: black;
+
+    .tour-list {
+      color: $white;
+      @include style-p;
+
+      ul {
+        color: #757575;
+        border: 1px solid #ccc;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: $white;
+        text-align: justify;
+      }
+
+      li {
+        border-bottom: 1px solid #ddd;
+        padding: 8px 16px;
+      }
+
+      .sold-out {
+        color: #fff;
+        background-color: #f44336;
+        margin-left: 16px;
+        @include span-style;
+      }
+
+      .have-stock {
+        @include span-style;
+        float: right;
+        margin-right: 16px;
+        border-radius: 50%;
+        background-color: $black;
+        color: $white;
+      }
+
+      .tours {
+        padding: 32px 0;
+        display: flex;
+        justify-content: space-between;
+
+        .tour-item {
+          width: 30%;
+          background-color: $white;
+
+          img {
+            width: 100%;
+            height: 250px;
+          }
+
+          .tour-item-content {
+            padding: 0 16px;
+
+            p {
+              color: $black;
+              text-align: justify;
+            }
+
+            p:nth-child(1) {
+              font-size: 15px;
+              font-weight: bold;
+              letter-spacing: normal;
+            }
+
+            p:nth-child(2) {
+              font-style: normal;
+            }
+
+            .buy-ticket-tour-button {
+              float: left;
+              margin: 10px 0px;
+              font-size: 15px;
+            }
+          }
+        }
+
+        @media screen and (max-width: 780px) {
+          flex-direction: column;
+          align-items: center;
+
+          .tour-item {
+            width: 80%;
+          }
+
+          .tour-item:nth-child(n+2) {
+              margin-top: 30px
+          }
+        }
+      }
+    }
+  }
+}

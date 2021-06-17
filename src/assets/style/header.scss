@@ -1,0 +1,141 @@
+$black: #000000;
+$blue: #32a2ce;
+$white: #ffffff;
+
+.header {
+  background-color: $black;
+  height: 46px;
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .menu {
+    button {
+      display: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+    padding: 12px 24px 12px 24px;
+    float: left;
+  }
+
+  a:hover {
+    background-color: $blue;
+    color: $black;
+  }
+
+  .dropdown-more {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    float: left;
+
+    .dropdown-part {
+      display: none;
+      flex-direction: column;
+      z-index: 1;
+    }
+
+    i {
+      margin-left: 10px;
+    }
+  }
+
+  .dropdown-more:hover {
+    a {
+      background-color: $blue;
+      color: $white;
+    }
+
+    .dropdown-part {
+      display: flex;
+
+      a {
+        background-color: $black;
+      }
+
+      a:hover {
+        background-color: $blue;
+      }
+    }
+  }
+
+  .search-container {
+    float: right;
+    height: 100%;
+    padding: 0 10px 0 10px;
+    display: flex;
+    align-items: center;
+
+    button {
+      padding: 8px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      margin-left: 3px;
+    }
+  }
+
+  @media screen and (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    .dropdown-more,
+    .search-container {
+      background-color: $black;
+      height: auto;
+    }
+
+    .search-container {
+      border: 1px solid $black;
+      display: flex;
+      align-items: center;
+      padding: 0 24px 0 24px;
+
+      .header-search-input {
+        margin: 0;
+        width: 90%;
+      }
+
+      button {
+        width: 10%;
+      }
+    }
+
+    .menu {
+      a {
+        display: block;
+        width: 10%;
+        float: left;
+      }
+
+      button {
+        background-color: $black;
+        display: block;
+        float: right;
+        border: none;
+        padding: 12px 24px;
+
+        i {
+          color: $white;
+        }
+      }
+    }
+
+    a {
+      background-color: $black;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .none-display {
+    display: none !important;
+  }
+}
